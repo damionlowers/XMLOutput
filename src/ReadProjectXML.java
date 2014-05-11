@@ -14,7 +14,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 
-public class ReadProjectXML2 {
+public class ReadProjectXML {
 	
 	private List<String> peerList = new ArrayList<String>();
 	private List<String> sectionList = new ArrayList<String>();
@@ -23,7 +23,7 @@ public class ReadProjectXML2 {
 	
 	
 	
-	public ReadProjectXML2() throws ParserConfigurationException, SAXException, IOException 
+	public ReadProjectXML() throws ParserConfigurationException, SAXException, IOException 
 	{
 		fXmlFile = new File("file.xml");
 		readXML();
@@ -36,7 +36,6 @@ public class ReadProjectXML2 {
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 		Document doc = dBuilder.parse(fXmlFile);
-
 				doc.getDocumentElement().normalize();
 			 
 				System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
@@ -45,13 +44,12 @@ public class ReadProjectXML2 {
 				NodeList nList = doc.getElementsByTagName("Peer");
 				NodeList SecNodeList = doc.getElementsByTagName("Section");
 			 
-				//System.out.println("----------------------------");
 			 
 				for (int temp = 0; temp < nList.getLength(); temp++) {
 			 
 					Node nNode = nList.item(temp);
 			 
-					//System.out.println("\nCurrent Element :" + nNode.getNodeName());
+					//System.out.println("\nCurrent Element :" + peerNode.getNodeName());
 			 
 					if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 			 

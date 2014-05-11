@@ -10,7 +10,7 @@ public class Main {
 	
 	public static void main(String aegs[]) throws ParserConfigurationException, SAXException, IOException, TransformerException
 	{
-		ReadProjectXML2 read = new ReadProjectXML2();
+		ReadProjectXML read = new ReadProjectXML();
 		
 		EditPeerSection editSecPeer = new EditPeerSection(read.getPeerList(),read.getSectionList());
 		
